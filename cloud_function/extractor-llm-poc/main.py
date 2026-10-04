@@ -352,11 +352,16 @@ def llm_extract_http(request: Request):
                     "make": parsed.get("make"),
                     "model": parsed.get("model"),
                     "mileage": parsed.get("mileage"),
+                    "color": parsed.get("color"),
+                    "transmission": parsed.get("transmission"),
+                    "title_status": parsed.get("title_status"),
+                    "city": parsed.get("city"),
+                    "state": parsed.get("state"),
+                    "zip_code": parsed.get("zip_code"),
                     "llm_provider": "vertex",
                     "llm_model": LLM_MODEL,
                     "llm_ts": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
                 }
-
                 _upload_jsonl_line(out_key, out_record)
                 written += 1
 
